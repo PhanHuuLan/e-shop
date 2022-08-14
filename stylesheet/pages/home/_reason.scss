@@ -1,0 +1,71 @@
+@media only screen and (min-width: 1200px) {
+  .section-reason {
+    background-color: #F7F7F7;
+    padding-bottom: 50px;
+    .reason-title {
+      text-align: center;
+      padding: 48px 0;
+    }
+    .reason-item {
+      .reason-image {
+        padding-bottom: 46px ;
+        :hover {
+          fill: $primary-color;
+        }
+      }
+      .reason-desc {
+        font-size: 16px;
+        font-weight: 700;
+        color: $black-color;
+      }
+      .reason-text {
+        font-size: 14px;
+        font-weight: 400;
+        color: $gray-color;
+      }
+      :hover {
+        .reason-desc { 
+          color: $primary-color;
+        }
+      }
+    }
+    
+  }
+}
+@media only screen and (max-width: 400px) {
+  .section-reason {
+    background-color: #F7F7F7;
+    padding-bottom: 24px;
+    .reason-title {
+      text-align: center;
+      padding: 24px 0;
+    }
+    .reason-item {
+      display: flex;
+      align-items: center;
+      .reason-image {
+        scale: 0.8;
+        padding-right: 16px;
+        :hover {
+          fill: $primary-color;
+        }
+      }
+      .reason-desc {
+        font-size: 12px;
+        font-weight: 700;
+        color: $black-color;
+      }
+      .reason-text {
+        font-size: 10px;
+        font-weight: 400;
+        color: $gray-color;
+      }
+      :hover {
+        .reason-desc { 
+          color: $primary-color;
+        }
+      }
+    }
+    
+  }
+}

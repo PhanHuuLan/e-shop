@@ -1,0 +1,29 @@
+.badge {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: red;
+  color: #fff;
+  position: absolute;
+  top: 130px;
+  left: 40px;
+}
+.badge-price {
+  top: 0;
+  transform: translateY(24px);
+}
+
+@media only screen and (max-width: 400px) {
+  .badge {
+    padding: 3px 5px;
+    font-size: 8px;
+    top: -22px;
+    left: 16px;
+  }
+  .badge-price {
+    top: 0;
+    transform: translateY(14px);
+  }
+}

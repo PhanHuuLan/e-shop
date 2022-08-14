@@ -1,0 +1,68 @@
+@media only screen and (min-width: 1200px) {
+  .section-subscribe {
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+      ),
+      url(/image/subscribe-desktop.png);
+    background-size: cover;
+    position: relative;
+    height: 241px;
+    .subscribe-wrapper {
+      display: flex;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      align-items: center;
+      .subscribe-title {
+        margin-right: 130px;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 36px;
+        color: #ffffff;
+        width: 40%;
+      }
+      .form-control {
+        margin-right: 40px;
+        border-radius: 20px;
+        border: none;
+        padding: 14px 140px 14px 24px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .section-subscribe {
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+      ),
+      url(/image/subscribe-sm.png);
+    background-size: cover;
+    position: relative;
+    height: 217px;
+    .subscribe-wrapper {
+      display: flex;
+      padding: 24px 0;
+      height: 217px;
+      flex-direction: column;
+      justify-content: space-between;
+      .subscribe-title {
+        width: 60%;
+        font-weight: 400;
+        font-size: 14px;
+        color: #ffffff;
+      }
+      .form-control{
+        margin-bottom: 16px;
+        border: none;
+        border-radius: 20px;
+        width: 100%;
+        padding: 6px 12px;
+      }
+    }
+  }
+}
