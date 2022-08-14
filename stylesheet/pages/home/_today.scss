@@ -1,0 +1,16 @@
+.section-today {
+  padding: 10px 0  60px 0;
+  .today-title {
+    text-align: center;
+    padding: 39px 0;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .section-today {
+    padding: 32px 0  52px 0 ;
+    .today-title {
+      text-align:unset;
+      padding: 16px 0;
+    }
+  }
+}

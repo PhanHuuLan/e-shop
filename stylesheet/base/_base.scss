@@ -1,0 +1,73 @@
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+@media only screen and (min-width: 1200px) {
+  .title {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 48px;
+    color: $black-color;
+  }
+  
+  .card {
+    position: relative;
+    .card-title {
+      font-size: 16px;
+      font-weight: 300;
+      color: $gray-color;
+      padding-top: 16px;
+    }
+    .card-price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .price {
+        font-weight: 400;
+        font-size: 20px;
+        color: $black-color;
+      }
+      .price-initial {
+        color: #ff0000;
+      }
+      .price-sale {
+        color: $gray-color;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 400px) {
+  .title {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 300;
+    color: $black-color;
+  }
+  
+  .card {
+    position: relative;
+    .card-title {
+      font-size: 12px;
+      font-weight: 300;
+      color: $gray-color;
+    }
+    .card-price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .price {
+        font-weight: 400;
+        font-size: 10px;
+        color: $black-color;
+      }
+      .price-initial {
+        color: #ff0000;
+      }
+      .price-sale {
+        color: $gray-color;
+      }
+    }
+  } 
+}
