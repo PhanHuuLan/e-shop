@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es6",
+    "watch": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true, 
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "dist",
+  },
+  "include": [
+    "ts/*.ts"
+  ]
+}
