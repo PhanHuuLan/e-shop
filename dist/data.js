@@ -7,6 +7,7 @@ const initData = [
         image: './image/product-1.png',
         price: 119.99,
         discount: 30,
+        quantity: 0,
     },
     {
         id: 2,
@@ -14,6 +15,7 @@ const initData = [
         image: './image/product-2.png',
         price: 119.99,
         discount: 0,
+        quantity: 0,
     },
     {
         id: 3,
@@ -21,6 +23,7 @@ const initData = [
         image: './image/product-3.png',
         price: 79.99,
         discount: 0,
+        quantity: 0,
     },
     {
         id: 4,
@@ -28,6 +31,7 @@ const initData = [
         image: './image/product-4.png',
         price: 119.99,
         discount: 0,
+        quantity: 0,
     },
 ];
 setStorage(listKeys.productList, initData);

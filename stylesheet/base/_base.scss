@@ -36,6 +36,17 @@ body {
         color: $gray-color;
       }
     }
+    .js-addProduct {
+      display: none;
+      position: absolute;
+      transform: translate(50%, -50%);
+      bottom: 100px;
+    }
+  }
+  .card:hover {
+    .js-addProduct {
+      display: block;
+    }
   }
 }
 @media only screen and (max-width: 400px) {
@@ -69,5 +80,16 @@ body {
         color: $gray-color;
       }
     }
+    .js-addProduct {
+      display: none;
+      position: absolute;
+      transform: translate(20%, -50%);
+      bottom: 50px;
+    }
   } 
+  .card:hover {
+    .js-addProduct {
+      display: block;
+    }
+  }
 }

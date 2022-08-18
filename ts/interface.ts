@@ -2,13 +2,12 @@
 export interface initData {
   id: number;
   name: string;
-  iamge: string;
+  image: string;
   price: number;
   discount: number;
+  quantity: number;
 }
 export const listKeys = {
   productList : 'productList',
+  cartList: 'cartList',
 }
-export interface ProductsList {
-  [key: number | string] : initData,
-};

@@ -14,7 +14,18 @@
   top: 0;
   transform: translateY(24px);
 }
-
+.js-countCart {
+  position: relative;
+}
+.js-count {
+  z-index: -1;
+  background-color: red;
+  position: absolute;
+  padding: 1px 5px;
+  border-radius: 30px;
+  right: -11px;
+  bottom: 10px;
+}
 @media only screen and (max-width: 400px) {
   .badge {
     padding: 3px 5px;

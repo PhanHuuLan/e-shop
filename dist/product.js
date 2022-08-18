@@ -1,4 +1,4 @@
-import { getStorage } from './common.js';
+import { getStorage, setStorage } from './common.js';
 import { listKeys } from './interface.js';
 const productElements = document.querySelectorAll('.js-products');
 const renderCard = (element) => {
@@ -38,6 +38,14 @@ const renderCard = (element) => {
         priceInitial.classList.add('price');
         divPrice.appendChild(priceInitial);
         priceInitial.textContent = `$${element.price}`;
+        const addProduct = document.createElement('button');
+        // addProduct.id =`addToCart-${element.id}`; 
+        addProduct.classList.add('btn', 'btn-primary', 'js-addProduct');
+        addProduct.textContent = 'Add to Cart';
+        divCard.appendChild(addProduct);
+        addProduct.addEventListener('click', () => {
+            handleAddProduct(element.id);
+        });
         if (element.discount > 0) {
             priceInitial.classList.add('price-initial');
             priceInitial.textContent = `$${((element.price) - (element.price * element.discount / 100)).toFixed(2)} `;
@@ -58,4 +66,36 @@ const renderProduct = () => {
         renderCard(product);
     });
 };
+const handleAddProduct = (id) => {
+    let products = getStorage(listKeys.productList);
+    const product = products.find(function (element) {
+        return +element.id === +id;
+    });
+    let cart = getStorage(listKeys.cartList);
+    const existProduct = cart.find(function (element) {
+        return +element.id === +id;
+    });
+    if (!existProduct) {
+        const newProductCart = Object.assign(Object.assign({}, product), { quantity: 1 });
+        cart.push(newProductCart);
+    }
+    else {
+        cart[cart.indexOf(existProduct)].quantity += 1;
+    }
+    setStorage(listKeys.cartList, cart);
+    countCart();
+};
+const countCart = () => {
+    const cart = getStorage(listKeys.cartList);
+    let count = 0;
+    cart.forEach(function (element) {
+        count += element.quantity;
+    });
+    const renderCount = document.createElement('span');
+    renderCount.classList.add('js-count');
+    renderCount.textContent = `${count}`;
+    const countItem = document.querySelector('.js-countCart');
+    countItem === null || countItem === void 0 ? void 0 : countItem.append(renderCount);
+};
 renderProduct();
+countCart();
