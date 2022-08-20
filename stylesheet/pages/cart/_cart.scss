@@ -1,0 +1,257 @@
+/* Global "table" column settings */
+.product-image {
+  float: left;
+  width: 20%;
+}
+.product-details {
+  float: left;
+  width: 37%;
+}
+.product-price {
+  float: left;
+  width: 12%;
+}
+.product-quantity {
+  display: flex;
+  float: left;
+  width: 10%;
+}
+.product-removal {
+  float: left;
+  width: 9%;
+}
+.product-line-price {
+  float: left;
+  width: 12%;
+  text-align: right;
+}
+.image-empty {
+  display: flex;
+  justify-content: center;
+}
+/* This is used as the traditional .clearfix class */
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  zoom: 1;
+}
+
+/* Apply clearfix in a few places */
+.shopping-cart,
+.column-labels,
+.product,
+.totals-item {
+  @extend .group;
+}
+
+/* Apply dollar signs */
+.product .product-price:before,
+// .product .product-line-price:before,
+.totals-value:before {
+  content: "$";
+}
+.column-labels {
+  label {
+    font-weight: 700;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid $gray-color;
+  }
+
+  .product-image,
+  .product-details,
+  .product-removal {
+    text-indent: -9999px;
+  }
+}
+.btn-change {
+  padding: 5px 15px;
+  border: 0;
+  background-color: $primary-color;
+}
+/* Product entries */
+.cart {
+  padding: 50px;
+}
+.product {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $gray-color;
+
+  .product-image {
+    display: grid;
+    img {
+      // display: inline-flex;
+      margin-left: 30px;
+      width: 150px;
+    }
+  }
+
+  .product-details {
+    .product-title {
+      font-size: 16px;
+      margin-right: 20px;
+      font-family: 700;
+    }
+    .product-description {
+      margin: 5px 20px 5px 0;
+      line-height: 1.4em;
+    }
+  }
+
+  .product-quantity {
+
+    input {
+      border: none;
+      text-align: center;
+      width: 40px;
+    }
+  }
+
+  .remove-product {
+    margin-left: 50px;
+    border: none;
+    padding: 5px 8px;
+    background-color: $primary-color;
+    color: #fff;
+    font-family: 400;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+
+  .remove-product:hover {
+    background-color: #a44;
+  }
+}
+
+/* Totals section */
+.totals {
+  .totals-item {
+    float: right;
+    clear: both;
+    width: 100%;
+    margin-bottom: 10px;
+
+    label {
+      float: left;
+      clear: both;
+      width: 79%;
+      text-align: right;
+    }
+
+    .totals-value {
+      float: right;
+      width: 21%;
+      text-align: right;
+    }
+  }
+
+  .totals-item-total {
+    font-family: 700;
+  }
+}
+
+.checkout {
+  float: right;
+  border: 0;
+  margin-top: 20px;
+  padding: 6px 25px;
+  background-color: $primary-color;
+
+  color: #fff;
+  font-size: 25px;
+  border-radius: 3px;
+}
+
+.checkout:hover {
+  background-color: #494;
+}
+
+/* Make adjustments for tablet */
+@media screen and (max-width: 650px) {
+  .shopping-cart {
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid $gray-color;
+  }
+
+  .column-labels {
+    display: none;
+  }
+
+  .product-image {
+    float: right;
+    width: auto;
+    img {
+      margin: 0 0 10px 10px;
+    }
+  }
+
+  .product-details {
+    float: none;
+    margin-bottom: 10px;
+    width: auto;
+  }
+
+  .product-price {
+    clear: both;
+    width: 70px;
+  }
+
+  .product-quantity {
+    width: 100px;
+    input {
+      text-align: center;
+      margin-left: 20px;
+    }
+  }
+
+  .product-quantity:before {
+    content: "x";
+  }
+
+  .product-removal {
+    width: auto;
+  }
+
+  .product-line-price {
+    float: right;
+    width: 70px;
+  }
+}
+
+/* Make more adjustments for phone */
+@media screen and (max-width: 350px) {
+  .product-removal {
+    float: right;
+  }
+
+  .product-line-price {
+    float: right;
+    clear: left;
+    width: auto;
+    margin-top: 10px;
+  }
+
+  // .product :before {
+  //   content: "Item Total: $";
+  // }
+
+  .totals {
+    .totals-item {
+      label {
+        width: 60%;
+      }
+
+      .totals-value {
+        width: 40%;
+      }
+    }
+  }
+}
