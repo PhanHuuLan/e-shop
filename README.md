@@ -2,9 +2,9 @@
 > Fashion-Shop
 - Code layout Fashion-Shop,responsive
 - Add product in cart
-- increase or decrease and delete product in cart
+- Increase or decrease and delete product in cart
 #### Description
-> HTML/SASS/TypeScript/localStorage
+> HTML/SASS/ES6/TypeScript/localStorage
 - UI Desktop 
 > ![screencapture-127-0-0-1-5500-2022-08-20-22_19_45](https://user-images.githubusercontent.com/63353851/185754192-6ec8a64b-0c2c-4c6e-be92-0e0f98fc626e.png)
 - UI Product In Cart
