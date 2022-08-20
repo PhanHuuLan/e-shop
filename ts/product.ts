@@ -1,21 +1,21 @@
 
-
+import { countCart } from './base.js';
 import { getStorage, setStorage } from './common.js';
 import { listKeys, initData } from './interface.js';
 
 const productElements : NodeList  = document.querySelectorAll('.js-products');
 
-
 const renderCard = (element : initData) => { 
   productElements.forEach( e => {
-    const liItem : HTMLElement = document.createElement('li');
+    const liItem : HTMLLIElement = document.createElement('li');
     liItem.classList.add('col-3','col-sm-6','foryou-item');
     e.appendChild(liItem);
-    const divCard : HTMLElement = document.createElement('div');
+
+    const divCard : HTMLDivElement = document.createElement('div');
     divCard.classList.add('card');
     liItem.appendChild(divCard);
 
-    const divCardImage : HTMLElement = document.createElement('div');
+    const divCardImage : HTMLDivElement = document.createElement('div');
     divCardImage.classList.add('card-image');
     divCard.appendChild(divCardImage);
 
@@ -29,7 +29,7 @@ const renderCard = (element : initData) => {
     imageCard.alt = 'product';
     aImage.appendChild(imageCard);
 
-    const divContent : HTMLElement = document.createElement('div');
+    const divContent : HTMLDivElement = document.createElement('div');
     divContent.classList.add('card-content');
     divCard.appendChild(divContent);
     
@@ -43,7 +43,7 @@ const renderCard = (element : initData) => {
     h4Card.textContent = `${element.name}`;
     aContent.appendChild(h4Card);
 
-    const divPrice : HTMLElement = document.createElement('div');
+    const divPrice : HTMLDivElement = document.createElement('div');
     divPrice.classList.add('card-price');
     aContent.appendChild(divPrice);
 
@@ -52,8 +52,7 @@ const renderCard = (element : initData) => {
     divPrice.appendChild(priceInitial);
     priceInitial.textContent = `$${element.price}`;
 
-    const addProduct : HTMLElement = document.createElement('button');
-    // addProduct.id =`addToCart-${element.id}`; 
+    const addProduct : HTMLButtonElement = document.createElement('button');
     addProduct.classList.add('btn','btn-primary','js-addProduct');
     addProduct.textContent = 'Add to Cart';
     divCard.appendChild(addProduct);
@@ -70,7 +69,7 @@ const renderCard = (element : initData) => {
         priceSale.textContent = `$${element.price}`;
         divPrice.appendChild(priceSale);
 
-        const discount : HTMLElement = document.createElement('a');
+        const discount : HTMLAnchorElement = document.createElement('a');
         discount.classList.add('badge','badge-price');
         discount.textContent = `${-element.discount}%`;
         divContent.appendChild(discount);
@@ -106,19 +105,5 @@ const handleAddProduct = (id: number) => {
   countCart();
 }
 
-const countCart = () => {
-  const cart : initData[] = getStorage(listKeys.cartList);
-  let count : number = 0;
-  cart.forEach(function(element : initData) {
-    count += element.quantity;
-  })
-  const renderCount : HTMLElement = document.createElement('span');
-  renderCount.classList.add('js-count');
-  renderCount.textContent = `${count}`;
-
-  const countItem : HTMLElement | null= document.querySelector('.js-countCart') ;
-  countItem?.append(renderCount);
-  
-}
 renderProduct();
 countCart();

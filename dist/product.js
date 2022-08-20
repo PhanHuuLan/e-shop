@@ -1,3 +1,4 @@
+import { countCart } from './base.js';
 import { getStorage, setStorage } from './common.js';
 import { listKeys } from './interface.js';
 const productElements = document.querySelectorAll('.js-products');
@@ -39,7 +40,6 @@ const renderCard = (element) => {
         divPrice.appendChild(priceInitial);
         priceInitial.textContent = `$${element.price}`;
         const addProduct = document.createElement('button');
-        // addProduct.id =`addToCart-${element.id}`; 
         addProduct.classList.add('btn', 'btn-primary', 'js-addProduct');
         addProduct.textContent = 'Add to Cart';
         divCard.appendChild(addProduct);
@@ -84,18 +84,6 @@ const handleAddProduct = (id) => {
     }
     setStorage(listKeys.cartList, cart);
     countCart();
-};
-const countCart = () => {
-    const cart = getStorage(listKeys.cartList);
-    let count = 0;
-    cart.forEach(function (element) {
-        count += element.quantity;
-    });
-    const renderCount = document.createElement('span');
-    renderCount.classList.add('js-count');
-    renderCount.textContent = `${count}`;
-    const countItem = document.querySelector('.js-countCart');
-    countItem === null || countItem === void 0 ? void 0 : countItem.append(renderCount);
 };
 renderProduct();
 countCart();

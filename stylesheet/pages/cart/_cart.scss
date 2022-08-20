@@ -25,7 +25,10 @@
   width: 12%;
   text-align: right;
 }
-
+.image-empty {
+  display: flex;
+  justify-content: center;
+}
 /* This is used as the traditional .clearfix class */
 .group:before,
 .group:after {
@@ -49,7 +52,7 @@
 
 /* Apply dollar signs */
 .product .product-price:before,
-.product .product-line-price:before,
+// .product .product-line-price:before,
 .totals-value:before {
   content: "$";
 }
@@ -236,9 +239,9 @@
     margin-top: 10px;
   }
 
-  .product .product-line-price:before {
-    content: "Item Total: $";
-  }
+  // .product :before {
+  //   content: "Item Total: $";
+  // }
 
   .totals {
     .totals-item {
